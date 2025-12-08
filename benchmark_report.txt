@@ -1,0 +1,121 @@
+BENCHMARK REPORT
+Using bipartite graph generator
+============================================================
+
+
+============================================================
+BENCHMARK: C++ vs NetworkX
+============================================================
+
+RESULTS:
+------------------------------------------------------------
+C++:
+  Colors used: 6
+  Time: 0.5660 sec
+  Memory: 0.08 MB
+
+NetworkX:
+  Colors used: 5
+  Theoretical minimum: 5
+  Time: 0.0057 sec
+  Memory: 0.08 MB
+
+Validity C++: Ребро ('0', '6') не знайдене
+
+Speedup C++ over NetworkX: 99.97x
+============================================================
+
+============================================================
+BENCHMARK: C++ vs NetworkX
+============================================================
+
+RESULTS:
+------------------------------------------------------------
+C++:
+  Colors used: 36
+  Time: 0.2051 sec
+  Memory: 0.08 MB
+
+NetworkX:
+  Colors used: 36
+  Theoretical minimum: 36
+  Time: 0.0376 sec
+  Memory: 1.56 MB
+
+Validity C++: Ребро ('0', '10') не знайдене
+
+Speedup C++ over NetworkX: 5.46x
+============================================================
+
+============================================================
+BENCHMARK: C++ vs NetworkX
+============================================================
+
+RESULTS:
+------------------------------------------------------------
+C++:
+  Colors used: 53
+  Time: 0.2166 sec
+  Memory: 0.27 MB
+
+NetworkX:
+  Colors used: 43
+  Theoretical minimum: 42
+  Time: 0.6565 sec
+  Memory: 21.92 MB
+
+Validity C++: Ребро ('0', '115') не знайдене
+
+Speedup C++ over NetworkX: 0.33x
+============================================================
+
+============================================================
+BENCHMARK: C++ vs NetworkX
+============================================================
+
+RESULTS:
+------------------------------------------------------------
+C++:
+  Colors used: 325
+  Time: 0.2546 sec
+  Memory: 0.86 MB
+
+NetworkX:
+  Colors used: 325
+  Theoretical minimum: 325
+  Time: 10.0235 sec
+  Memory: 317.51 MB
+
+Validity C++: Ребро ('0', '33') не знайдене
+
+Speedup C++ over NetworkX: 0.03x
+============================================================
+
+============================================================
+SUMMARY
+============================================================
+
+Nodes: 13, Edges: 20
+  C++: 0.5660s, 0.08MB, Colors: 6
+  NetworkX: 0.0057s, 0.08MB, Colors: 5
+  Speedup: 99.97x
+
+Nodes: 107, Edges: 305
+  C++: 0.2051s, 0.08MB, Colors: 36
+  NetworkX: 0.0376s, 1.56MB, Colors: 36
+  Speedup: 5.46x
+
+Nodes: 200, Edges: 2996
+  C++: 0.2166s, 0.27MB, Colors: 53
+  NetworkX: 0.6565s, 21.92MB, Colors: 43
+  Speedup: 0.33x
+
+Nodes: 1032, Edges: 9480
+  C++: 0.2546s, 0.86MB, Colors: 325
+  NetworkX: 10.0235s, 317.51MB, Colors: 325
+  Speedup: 0.03x
+
+
+Graphs saved as 'benchmark_results.png'
+
+Graphs saved as 'benchmark_results.png'
