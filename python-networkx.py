@@ -37,12 +37,14 @@ def check_validity(parsed_data, graph):
         for neighbor in graph.neighbors(node):
             edge = (min(node, neighbor), max(node, neighbor))
             if edge not in edges_coloring:
-                return False, f"Ребро {edge} не знайдене"
+                return False, f"Edge {edge} not found"
 
             color = edges_coloring[edge]
             if color in incident_colors:
-                return False, f"Вершина {node}: два ребра одного кольору {color}"
+                return False, f"Node {node}: two edges with same color {color}"
             incident_colors.add(color)
+
+    return True, "Valid coloring"
 
     return True, "✓ Розфарбування валідне!"
 
@@ -50,7 +52,7 @@ def benchmark_networkx(input_graph_file: str):
     start_time = time.time()
     tracemalloc.start()
 
-    G = nx.read_edgelist(input_graph_file)
+    G = nx.read_edgelist(input_graph_file, nodetype=int)
 
     max_degree = max(dict(G.degree()).values()) if G.number_of_nodes() > 0 else 0
 
@@ -135,7 +137,7 @@ def benchmark_comparison(input_file, cpp_output_file="output.txt", output_report
         report.write(f"  Time: {nx_result['time']:.4f} sec\n")
         report.write(f"  Memory: {nx_result['memory_mb']:.2f} MB\n")
 
-        G = nx.read_edgelist(input_file)
+        G = nx.read_edgelist(input_file, nodetype=int)
         is_valid, msg = check_validity(cpp_data, G)
         report.write(f"\nValidity C++: {msg}\n")
 
@@ -223,7 +225,8 @@ if __name__ == "__main__":
         (5, 10),
         (10, 100),
         (100, 100),
-        (32, 1000)
+        (32, 1000),
+        (1000, 1000)
     ]
     results = []
     report_file = "benchmark_report.txt"
